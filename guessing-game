@@ -1,0 +1,29 @@
+import random
+
+//guessing game against computer
+
+def guess():
+    a = 0
+    b = 100
+    d = random.randint(a, b)
+    print(f'Computer guess is: {d}')
+    p = input('What do you say? ')
+    while p != 'number':
+        if p == 'low':
+            a = d
+            d = random.randint(a, b)
+            print(f'Computers next guess is:{d}')
+            p = input('What do you say? ')
+        elif p == 'high':
+            b = d
+            d = random.randint(a, b)
+            print(f'Computers next guess is:{d}')
+            p = input('What do you say? ')
+        else:
+            print('Something went wrong!')
+            return -1
+    print('Computer guessed right!')
+    return d
+
+
+print(guess())
